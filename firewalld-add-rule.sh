@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! $UID -eq 0 ]; then
+    echo 'superuser required'
+    exit;
+fi
+
 # firewalld rich rule assisting script
 # 
 # 1st arg  : zone (default 'public')
