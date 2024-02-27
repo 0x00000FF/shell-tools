@@ -11,4 +11,4 @@ if [ -z "${MAIL_ADDRESS}" ]; then
 fi
 
 # prepare certbot-auth-hook.sh and certbot-cleanup-hook.sh by yourselves
-certbot certonly --manual --no-eff-email --manual-auth-hook /certbot-auth-hook.sh --manual-post-hook /certbot-cleanup-hook.sh --preferred-challenges dns -d *.${DOMAIN_NAME} -d ${DOMAIN_NAME} --agree-tos -m ${MAIL_ADDRESS} --force-renewal
+certbot certonly --manual --no-eff-email --manual-auth-hook /certbot-auth-hook.sh --manual-cleanup-hook /certbot-cleanup-hook.sh --preferred-challenges dns -d *.${DOMAIN_NAME} -d ${DOMAIN_NAME} --agree-tos -m ${MAIL_ADDRESS} --force-renewal
